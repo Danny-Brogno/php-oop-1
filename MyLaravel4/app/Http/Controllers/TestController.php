@@ -4,20 +4,11 @@ use Illuminate\Http\Request;
 
 class Movie {
 
-  // - definire classe User caratterizzata da nomeUtente, password
-  // - definire una funzione all'interno della classe User per ottenere una stringa
-  //   che rappresenti l'utente
-  // - all'interno del metodo del controller (home) istanziare un paio di oggetti
-  //   di tipo User (new User() )
-  // - definire i relativi dati (username e password)
-  // - stampare risultati della getString() attraverso il dd
-
-  // - aggiungere il metodo __construct che acquisisca le 2 informazioni username e
-  //   password in maniera obbligatoria
-
-  // - generare altre due istanze della classe User, e aggiungere poi tutti gli oggetti
-  //   creati all'interno di un array
-  // - ciclando sull'array stampare tutti gli elementi
+// GOAL: come detto a lezione, generare nuovo controller con rotta associata;
+// definire poi classe Movie con titolo e descrizione;
+// definire costruttore con titolo necessario e descrizione opzionale;
+// e metodo getString() che restituisca una stringa riportante tutte le variabili;
+// generare poi un paio di istanze e stamparle per mezzo del dd() come visto in classe
 
   public $title;
   public $description;
