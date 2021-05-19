@@ -1,11 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
-
-// -------------------
 class User {
 
   // - definire classe User caratterizzata da nomeUtente, password
@@ -41,8 +36,6 @@ class User {
   }
 
 }
-// -------------------
-
 
 class TestController extends Controller
 {
@@ -51,36 +44,20 @@ class TestController extends Controller
   public function home() {
 
     $test1 = new User("Caio Giulio Cesare", "deBelloGallico");
-
     $test2 = new User("Marco Tullio Cicerone", "catilina123");
-
     $test3 = new User("Quinto Tiberio Massimo");
-
     $test4 = new User("Lucio Valerio Germanico");
-
     $test5 = new User("Publio Elio Adriano", "vallo");
-
     $test6 = new User("Tiberio Sempronio Longo");
-
     $test7 = new User("Tito Flavio Vespasiano", "colosseo02");
-
     $test8 = new User("Marco Ulpio Traiano");
 
-    $tests = [
-      $test1,
-      $test2,
-      $test3,
-      $test4,
-      $test5,
-      $test6,
-      $test7,
-      $test8
-    ];
+    $tests = [$test1, $test2, $test3, $test4, $test5, $test6, $test7, $test8];
 
     $str = "";
 
     foreach($tests as $test) {
-      $str .= $test -> getString() . "\n";
+      $str = $str . $test -> getString() . "\n";
       // .= è contatenazione (+= in JS)
     }
 
