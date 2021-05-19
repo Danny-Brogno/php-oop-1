@@ -1,7 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-class User {
+
+class Movie {
 
   // - definire classe User caratterizzata da nomeUtente, password
   // - definire una funzione all'interno della classe User per ottenere una stringa
@@ -18,24 +19,24 @@ class User {
   //   creati all'interno di un array
   // - ciclando sull'array stampare tutti gli elementi
 
-  public $nomeUtente;
-  public $password;
+  public $title;
+  public $description;
 
-  public function __construct($nomeUtente, $password = null) {
+  public function __construct($title, $description = null) {
 
-    $this -> nomeUtente = $nomeUtente;
-    $this -> password = $password;
+    $this -> title = $title;
+    $this -> description = $description;
 
-    if($password == null) {
-      $this -> password = uniqid();
+    if($description == null) {
+      $this -> description = "No description";
     }
   }
 
   public function getString() {
-    return "User:" . " " . $this -> nomeUtente . " " . "-->" . " " . $this -> password;
+    return "Movie:" . " " . $this -> title . ". " . " Genre -->" . " " . $this -> description;
   }
 
-}
+} //   END OF CLASS MOVIE
 
 class TestController extends Controller
 {
@@ -43,21 +44,21 @@ class TestController extends Controller
 
   public function home() {
 
-    $test1 = new User("Caio Giulio Cesare", "deBelloGallico");
-    $test2 = new User("Marco Tullio Cicerone", "catilina123");
-    $test3 = new User("Quinto Tiberio Massimo");
-    $test4 = new User("Lucio Valerio Germanico");
-    $test5 = new User("Publio Elio Adriano", "vallo");
-    $test6 = new User("Tiberio Sempronio Longo");
-    $test7 = new User("Tito Flavio Vespasiano", "colosseo02");
-    $test8 = new User("Marco Ulpio Traiano");
+    $film1 = new Movie("Matrix", "action");
+    $film2 = new Movie("Ace Ventura", "Comedy");
+    $film3 = new Movie("Star Wars");
+    $film4 = new Movie("The Ring", "Horror");
+    $film5 = new Movie("The Gladiator", "History/War");
+    $film6 = new Movie("Liar Liar");
+    $film7 = new Movie("Seven", "Psychological Thriller");
+    $film8 = new Movie("Fight Club");
 
-    $tests = [$test1, $test2, $test3, $test4, $test5, $test6, $test7, $test8];
+    $films = [$film1, $film2, $film3, $film4, $film5, $film6, $film7, $film8];
 
     $str = "";
 
-    foreach($tests as $test) {
-      $str = $str . $test -> getString() . "\n";
+    foreach($films as $film) {
+      $str = $str . $film -> getString() . "\n";
       // .= è contatenazione (+= in JS)
     }
 
