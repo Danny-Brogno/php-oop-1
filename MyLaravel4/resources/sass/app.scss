@@ -1,0 +1,23 @@
+/* GENERAL RULES FOR THE WHOLE PAGE */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(to bottom right, #388E8E, #000080);
+  background-repeat: no-repeat;
+  color: white;
+}
